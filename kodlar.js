@@ -78,6 +78,14 @@ function kartAc(){
 }
 
 //Tahmin kontrol ve sonuç gösterme fonksiyonu tanımla
+tahminButonu.addEventListener("click",sonucKontrol);
 function sonucKontrol(){
-
+    const tahmin = tahminGirisi.value.toUpperCase();
+    if (tahmin === rastgeleOgrenci.ad) {
+        sonucAlani.textContent = "Tam isabet!";
+    } else {
+        sonucAlani.textContent = `Bilemediniz. Doğru cevap: "${rastgeleOgrenci.ad}".`;
+    }
+    tahminButonu.disabled = true;
+    setTimeout(oyunuBaslat, 2000);
 }
